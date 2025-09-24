@@ -79,7 +79,7 @@ This keeps the app **scalable and maintainable**, especially as features grow (t
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the repo
+### 1️⃣ Clone the repo For Frontend
 ```bash
 git clone https://github.com/saifriaz001/AI-Powered-vote-notes-frontend.git
 cd AI-FRONTEND
@@ -98,3 +98,23 @@ VITE_CLOUDINARY_FOLDER=audio
 
 # Backend API Base URL
 VITE_API_BASE_URL=http://localhost:5000/api
+
+
+###  Clone the repo For Backend
+```bash
+git clone https://github.com/saifriaz001/AI-Powered-vote-notes-backend.git
+npm install 
+npm run start
+
+## ⚙️ Environment Variables (Frontend)
+
+Create a `.env` file in the **frontend root** (same folder as `vite.config.js`) with the following:
+
+```env
+# Cloudinary (for audio uploads)
+MONGO_URI=mongodb+srv://zaidaankhan70_db_user:USGcmAFGiX29d34R@cluster0.plh62u9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+PORT=4500
+GEMINI_API_KEY=" "
+
+
+
