@@ -8,15 +8,15 @@ export const postNote = async (payload) => {
   console.log("checking POST notes url ->", POST_NOTES);
 
   try {
-    const response = await apiConnector("POST", POST_NOTES, payload, null);
+    // const response = await apiConnector("POST", POST_NOTES, payload, null);
 
-    console.log("Response from post note:", response);
+    // console.log("Response from post note:", response);
 
     if (response.status === 201) {
-      console.log("Note created successfully:", response.data);
+      // console.log("Note created successfully:", response.data);
       return response.data;
     } else {
-      console.error("Failed to create note:", response.data);
+      // console.error("Failed to create note:", response.data);
       throw new Error(`Unexpected status ${response.status}`);
     }
   } catch (error) {
@@ -27,20 +27,20 @@ export const postNote = async (payload) => {
 
 // ✅ Get all Notes
 export const getNotes = async () => {
-  console.log("checking GET notes url ->", GET_NOTES);
+  // console.log("checking GET notes url ->", GET_NOTES);
 
   try {
     const response = await apiConnector("GET", GET_NOTES, null, {
       withCredentials: true,
     });
 
-    console.log("Response from get notes:", response);
+    // console.log("Response from get notes:", response);
 
     if (response.status === 200) {
-      console.log("Notes fetched successfully:", response.data);
+      // console.log("Notes fetched successfully:", response.data);
       return response.data;
     } else {
-      console.error("Failed to fetch notes:", response.data);
+      // console.error("Failed to fetch notes:", response.data);
       throw new Error("Non-200 response");
     }
   } catch (error) {
@@ -51,20 +51,20 @@ export const getNotes = async () => {
 
 // ✅ Update a Note
 export const updateNote = async (noteId, payload) => {
-  console.log("checking UPDATE notes url ->", `${UPDATE_NOTES}/${noteId}`);
+  // console.log("checking UPDATE notes url ->", `${UPDATE_NOTES}/${noteId}`);
 
   try {
     const response = await apiConnector("PUT", `${UPDATE_NOTES}/${noteId}`, payload, {
       withCredentials: true,
     });
 
-    console.log("Response from update note:", response);
+    // console.log("Response from update note:", response);
 
     if (response.status === 200) {
-      console.log("Note updated successfully:", response.data);
+      // console.log("Note updated successfully:", response.data);
       return response.data;
     } else {
-      console.error("Failed to update note:", response.data);
+      // console.error("Failed to update note:", response.data);
       throw new Error("Non-200 response");
     }
   } catch (error) {
@@ -75,20 +75,20 @@ export const updateNote = async (noteId, payload) => {
 
 // ✅ Delete a Note
 export const deleteNote = async (noteId) => {
-  console.log("checking DELETE notes url ->", `${DELETE_NOTES}/${noteId}`);
+  // console.log("checking DELETE notes url ->", `${DELETE_NOTES}/${noteId}`);
 
   try {
     const response = await apiConnector("DELETE", `${DELETE_NOTES}/${noteId}`, undefined, {
       withCredentials: true,
     });
 
-    console.log("Response from delete note:", response);
+    // console.log("Response from delete note:", response);
 
     if (response.status === 200) {
-      console.log("Note deleted successfully:", response.data);
+      // console.log("Note deleted successfully:", response.data);
       return response.data;
     } else {
-      console.error("Failed to delete note:", response.data);
+      // console.error("Failed to delete note:", response.data);
       throw new Error("Non-200 response");
     }
   } catch (error) {

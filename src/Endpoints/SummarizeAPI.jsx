@@ -15,13 +15,13 @@ export const postTranscribe = async (audioUrl) => {
       { withCredentials: true }
     );
 
-    console.log("Response from post transcribe:", response);
+    // console.log("Response from post transcribe:", response);
 
     if (response.status === 201 || response.status === 200) {
-      console.log("Transcription created successfully:", response.data);
+      // console.log("Transcription created successfully:", response.data);
       return response.data;
     } else {
-      console.error("Failed to transcribe:", response.data);
+      // console.error("Failed to transcribe:", response.data);
       throw new Error(`Unexpected status ${response.status}`);
     }
   } catch (error) {
@@ -30,7 +30,7 @@ export const postTranscribe = async (audioUrl) => {
       error?.message ||
       "Error during transcription";
 
-    console.error("Error during post transcribe:", error);
+    // console.error("Error during post transcribe:", error);
     const err = new Error(serverMsg);
     err.status = error?.response?.status;
     err.details = error?.response?.data;
@@ -40,7 +40,7 @@ export const postTranscribe = async (audioUrl) => {
 
 // ✅ Summarize a given text
 export const postSummarize = async (noteId, text) => {
-  console.log("checking post summarize url ->", `${POST_SUMMARIZE}/${noteId}`);
+  // console.log("checking post summarize url ->", `${POST_SUMMARIZE}/${noteId}`);
 
   try {
     const response = await apiConnector(
@@ -50,13 +50,13 @@ export const postSummarize = async (noteId, text) => {
       { withCredentials: true }
     );
 
-    console.log("Response from post summarize:", response);
+    // console.log("Response from post summarize:", response);
 
     if (response.status === 201 || response.status === 200) {
-      console.log("Summary created successfully:", response.data);
+      // console.log("Summary created successfully:", response.data);
       return response.data;
     } else {
-      console.error("Failed to summarize:", response.data);
+      // console.error("Failed to summarize:", response.data);
       throw new Error(`Unexpected status ${response.status}`);
     }
   } catch (error) {
