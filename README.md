@@ -43,10 +43,10 @@ This keeps the app **scalable and maintainable**, especially as features grow (t
 ### 🗂 All Notes
 ![All Notes Page](./assets/screenshots/imageAll.png)
 
-### 🎤 Modal & 
+###  Modal & 
 ![Recorder](./assets/screenshots/image.png)
 
-> Add your actual screenshots inside `assets/screenshots/` and update the paths above.
+
 
 ---
 
@@ -81,5 +81,20 @@ This keeps the app **scalable and maintainable**, especially as features grow (t
 
 ### 1️⃣ Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/voice-journal.git
-cd voice-journal
+git clone https://github.com/saifriaz001/AI-Powered-vote-notes-frontend.git
+cd AI-FRONTEND
+npm install 
+npm run dev 
+
+## ⚙️ Environment Variables (Frontend)
+
+Create a `.env` file in the **frontend root** (same folder as `vite.config.js`) with the following:
+
+```env
+# Cloudinary (for audio uploads)
+VITE_CLOUDINARY_UPLOAD_PRESET=voiceNotes
+VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
+VITE_CLOUDINARY_FOLDER=audio
+
+# Backend API Base URL
+VITE_API_BASE_URL=http://localhost:5000/api
